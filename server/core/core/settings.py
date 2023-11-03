@@ -19,13 +19,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
-CSRF_COOKIE_SECURE = os.environ.get("CSRF_COOKIE_SECURE")
-CSRF_COOKIE_HTTPONLY = os.environ.get("CSRF_COOKIE_HTTPONLY")
-SECURE_HSTS_SECONDS = os.environ.get("SECURE_HSTS_SECONDS")
-SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get("SECURE_HSTS_INCLUDE_SUBDOMAINS")
-SECURE_HSTS_PRELOAD = os.environ.get("SECURE_HSTS_PRELOAD")
-SESSION_COOKIE_SECURE = os.environ.get("SESSION_COOKIE_SECURE")
-SECURE_SSL_REDIRECT = os.environ.get("SESSION_COOKIE_SECURE")
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
 
 
