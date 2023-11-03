@@ -6,15 +6,15 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-# Get the current username
-current_username=$(whoami)
+# Get the username of the user who invoked sudo
+original_username=${SUDO_USER:-$(whoami)}
 
 # Prompt for the username
-read -p "Enter username or leave blank to use the current user ($current_username): " username
+read -p "Enter username or leave blank to use the current user ($original_username): " username
 
-# If the username is left blank, use the current user
+# If the username is left blank, use the original user
 if [[ -z "$username" ]]; then
-    username=$current_username
+    username=$original_username
 fi
 
 # Prepare a temporary file
