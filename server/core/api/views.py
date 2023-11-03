@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status, permissions, generics
 from django.contrib.auth import login, authenticate
 from .token import get_tokens_for_user
-from .models import ServerUsers, Traffic, Settings
+from .models import Client, Traffic, Settings
 from .serializers import (
     UserSerializer,
     ClientTestSerializer,
@@ -55,8 +55,8 @@ class UserEditView(APIView):
                 else data["traffic"]
             )
             try:
-                user = ServerUsers.objects.get(username=username)
-            except ServerUsers.DoesNotExist:
+                user = Client.objects.get(username=username)
+            except Client.DoesNotExist:
                 return Response(
                     {"message": "Not Exist User"}, status=status.HTTP_404_NOT_FOUND
                 )
@@ -91,8 +91,8 @@ class DetailUserView(APIView):
 
     def get_object(self, username):
         try:
-            return ServerUsers.objects.get(username=username)
-        except ServerUsers.DoesNotExist:
+            return Client.objects.get(username=username)
+        except Client.DoesNotExist:
             return None
 
     def get(self, request, username):
@@ -110,7 +110,7 @@ class DeleteUserView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def delete(self, request, username):
-        user_instance = ServerUsers.objects.filter(username=username).first()
+        user_instance = Client.objects.filter(username=username).first()
         result = delete_user(username)
         if "error" in result:
             return Response(
@@ -126,7 +126,7 @@ class GetAllUsersView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        users = ServerUsers.objects.all()
+        users = Client.objects.all()
         serializer = ClientTestSerializer(users, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -135,7 +135,7 @@ class GetAllUsersView(APIView):
 class ActivateDeactivateUserView(generics.UpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
-    queryset = ServerUsers.objects.all()
+    queryset = Client.objects.all()
     serializer_class = ActivateDeactivateUserSerializer
     lookup_field = "username"
 

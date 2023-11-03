@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 
 
 # Create your models here.
-class ServerUsers(models.Model):
+class Client(models.Model):
     username = models.CharField(max_length=255, unique=True)
     password = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, null=True, blank=True)
@@ -26,7 +26,7 @@ class ServerUsers(models.Model):
 
 class Traffic(models.Model):
     username = models.ForeignKey(
-        "ServerUsers",
+        "Client",
         on_delete=models.CASCADE,
         db_column="username",
         to_field="username",

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ServerUsers, Traffic, Settings
+from .models import Client, Traffic, Settings
 from rest_framework.validators import UniqueValidator
 
 
@@ -18,12 +18,12 @@ class UserEditSerializer(serializers.Serializer):
 
 class UserSerializer(serializers.ModelSerializer):
     username = serializers.CharField(
-        required=True, validators=[UniqueValidator(queryset=ServerUsers.objects.all())]
+        required=True, validators=[UniqueValidator(queryset=Client.objects.all())]
     )
     password = serializers.CharField(required=True)
 
     class Meta:
-        model = ServerUsers
+        model = Client
         fields = (
             "username",
             "password",
@@ -53,7 +53,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class ClientTestSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ServerUsers
+        model = Client
         fields = "__all__"
 
 
@@ -71,7 +71,7 @@ class SettingsSerializer(serializers.ModelSerializer):
 
 class ActivateDeactivateUserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ServerUsers
+        model = Client
         fields = ["status"]  # Assuming 'status' is the field you're updating
 
     def update(self, instance, validated_data):

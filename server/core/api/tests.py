@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APIClient
 from rest_framework import status
-from .models import ServerUsers
+from .models import Client
 from django.contrib.auth.models import User
 
 
@@ -55,7 +55,7 @@ class SignupUserViewTest(APITestCaseBase):
 class DeleteUserViewTest(APITestCaseBase):
     def test_delete_user(self):
         self.authenticate()
-        user_to_delete = ServerUsers.objects.create(
+        user_to_delete = Client.objects.create(
             username="test",
             password="password",
             multiuser=1,
@@ -72,7 +72,7 @@ class UserEditViewTest(APITestCaseBase):
     def test_edit_user(self):
         self.authenticate()
         url = reverse("edit-user")
-        self.client_test_user = ServerUsers.objects.create(
+        self.client_test_user = Client.objects.create(
             username="test",
             password="password",
             multiuser=1,

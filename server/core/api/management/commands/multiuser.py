@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.utils import timezone
-from api.models import ServerUsers, Settings
+from api.models import Client, Settings
 import subprocess
 import json
 
@@ -37,7 +37,7 @@ class Command(BaseCommand):
 
             for username in online_count:
                 self.stdout.write(self.style.SUCCESS(f"Processing user: {username}"))
-                clients = ServerUsers.objects.filter(username=username)
+                clients = Client.objects.filter(username=username)
                 for client in clients:
                     limitation = client.multiuser
                     start_date = client.start_date
