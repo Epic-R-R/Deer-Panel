@@ -229,16 +229,42 @@ class ServerFiltering(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        data = filtering()
-        return Response(data)
+        try:
+            settings = Settings.load()
+            serializer = SettingsSerializer(settings)
+            ssh_port = serializer.data.get("ssh_port")
+            if ssh_port is None:
+                return Response(
+                    {"error": "ssh_port not found in settings"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            data = filtering(ssh_port=ssh_port)
+            return Response(data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 class ServerOnlineUser(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        users = online()
-        return Response(users)
+        try:
+            settings = Settings.load()
+            serializer = SettingsSerializer(settings)
+            ssh_port = serializer.data.get("ssh_port")
+            if ssh_port is None:
+                return Response(
+                    {"error": "ssh_port not found in settings"},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            users = online(ssh_port=ssh_port)
+            return Response(users, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response(
+                {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 # Refresh Token
