@@ -11,7 +11,7 @@
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat-square&logo=Python&logoColor=white" alt="Python" />
 <img src="https://img.shields.io/badge/Django-092E20.svg?style=flat-square&logo=Django&logoColor=white" alt="Django" />
 </p>
-<img src="https://img.shields.io/github/license/Epic-R-R/Deer-Panel?style=flat-square&color=5D6D7E" alt="GitHub license" />
+<img src="https://img.shields.io/github/license/epic-r-r/Deer-Panel?style=flat-square&color=5d6d7e" alt="github license" />
 <img src="https://img.shields.io/github/last-commit/Epic-R-R/Deer-Panel?style=flat-square&color=5D6D7E" alt="git-last-commit" />
 <img src="https://img.shields.io/github/commit-activity/m/Epic-R-R/Deer-Panel?style=flat-square&color=5D6D7E" alt="GitHub commit activity" />
 <img src="https://img.shields.io/github/languages/top/Epic-R-R/Deer-Panel?style=flat-square&color=5D6D7E" alt="GitHub top language" />
