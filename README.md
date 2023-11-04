@@ -19,24 +19,23 @@
 
 ---
 
-##  Table of Contents
-- [ Table of Contents](#-table-of-contents)
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ repository Structure](#-repository-structure)
-- [ Modules](#modules)
-- [ Getting Started](#-getting-started)
-    - [ Installation](#-installation)
-    - [ Running Deer-Panel](#-running-Deer-Panel)
-    - [ Tests](#-tests)
-- [ Roadmap](#-roadmap)
-- [ Contributing](#-contributing)
-- [ License](#-license)
-
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+- [Highlighted Features](#highlighted-features)
+- [Repository Structure](#repository-structure)
+- [Modules](#modules)
+- [Getting Started](#getting-started)
+    - [Installation](#installation)
+    - [Running Deer-Panel](#running-deer-panel)
+    - [Tests](#tests)
+- [Contributing](#contributing)
+- [License](#license)
+- [API Documentation](#api-documentation)
 ---
 
 
-##  Overview
+## Overview
 
 **Deer Panel**, a Django-driven venture, serves as a potent and adaptable platform for overseeing users and their network interactions. Encapsulated within are extensive APIs tailored for user administration, traffic scrutiny, and server configuration management. Accompanying these are a curated set of scripts facilitating user account lifecycle management, server health monitoring, and traffic filtration.
 
@@ -49,7 +48,7 @@
 
 Under the hood, Deer Panel leverages the capabilities of Django alongside the Django Rest Framework for backend operations, with a MySQL database anchoring data storage needs. The code architecture is meticulously crafted, housing a robust suite of tests to uphold software quality and reliability standards.
 
-##  Repository Structure
+## Repository Structure
 
 ```sh
 └── server/
@@ -69,7 +68,7 @@ Under the hood, Deer Panel leverages the capabilities of Django alongside the Dj
 ---
 
 
-##  Modules
+## Modules
 
 <details closed><summary>Core</summary>
 
@@ -137,13 +136,13 @@ Under the hood, Deer Panel leverages the capabilities of Django alongside the Dj
 
 ---
 
-##  Getting Started
+## Getting Started
 
 ***Dependencies***
 
 Please ensure you have the following dependencies installed on your system:
 
-###  Installation
+### Installation
 
 1. Clone the Deer-Panel repository:
 ```sh
@@ -160,13 +159,13 @@ cd Deer-Panel/server/core
 pip install -r requirements.txt
 ```
 
-###  Running Deer-Panel
+### Running Deer-Panel
 
 ```sh
 python manage.py runserver
 ```
 
-###  Tests
+### Tests
 ```sh
 python manage.py test
 ```
@@ -174,7 +173,7 @@ python manage.py test
 ---
 
 
-##  Project Roadmap
+## Project Roadmap
 
 > - [X] `ℹ️  Task 1: User and Server Management Implementation`
 > - [ ] `ℹ️  Task 2: Scheduled Traffic and User Management Implementation`
@@ -183,7 +182,7 @@ python manage.py test
 
 ---
 
-##  Contributing
+## Contributing
 
 Contributions are welcome! Here are several ways you can contribute:
 
@@ -222,9 +221,18 @@ Once your PR is reviewed and approved, it will be merged into the main branch.
 
 ---
 
-##  License
+## License
 
 This project is protected under the [MIT License](https://choosealicense.com/licenses/mit/). For more details, refer to the [LICENSE](https://github.com/Epic-R-R/Deer-Panel/blob/master/LICENSE) file.
+
+---
+## API Documentation
+
+We have documented all the API endpoints, along with example requests and responses in Postman. Click the link below to explore the Deer Panel API documentation:
+
+[![View Documentation](https://img.shields.io/badge/API-Documentation-blue?style=for-the-badge)](https://documenter.getpostman.com/view/30889632/2s9YXe7itd)
+
+Feel free to test the endpoints directly within Postman or use the examples as a reference for how to interact with the API in your own applications.
 
 ---
 
