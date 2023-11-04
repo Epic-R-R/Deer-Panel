@@ -4,11 +4,10 @@ import re
 from typing import List, Dict
 
 
-def filtering() -> List[Dict[str, str]]:
+def filtering(ssh_port: str) -> List[Dict[str, str]]:
     data = []
     server_ip = requests.get("http://myip.dnsomatic.com").content.decode("utf-8")
-    # url = f"https://check-host.net/check-tcp?host={server_ip}:{PORT_SSH}&max_nodes=50"
-    url = f"https://check-host.net/check-tcp?host={server_ip}:22&max_nodes=50"
+    url = f"https://check-host.net/check-tcp?host={server_ip}:{ssh_port}&max_nodes=50"
     headers = {"Accept": "application/json", "Cache-Control": "no-cache"}
     response = requests.post(url, headers=headers)
     array = response.json()
