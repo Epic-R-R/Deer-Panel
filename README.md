@@ -22,22 +22,69 @@
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-- [Highlighted Features](#highlighted-features)
-- [Repository Structure](#repository-structure)
-- [Modules](#modules)
 - [Getting Started](#getting-started)
     - [Installation](#installation)
     - [Running Deer-Panel](#running-deer-panel)
     - [Tests](#tests)
+- [API Documentation](#api-documentation)
+- [Highlighted Features](#highlighted-features)
+- [Repository Structure](#repository-structure)
+- [Modules](#modules)
+- [Project Roadmap](#project-roadmap)
 - [Contributing](#contributing)
 - [License](#license)
-- [API Documentation](#api-documentation)
 ---
 
 
 ## Overview
 
 **Deer Panel**, a Django-driven venture, serves as a potent and adaptable platform for overseeing users and their network interactions. Encapsulated within are extensive APIs tailored for user administration, traffic scrutiny, and server configuration management. Accompanying these are a curated set of scripts facilitating user account lifecycle management, server health monitoring, and traffic filtration.
+
+## Getting Started
+
+***Dependencies***
+
+Please ensure you have the following dependencies installed on your system:
+
+### Installation
+
+1. Clone the Deer-Panel repository:
+```sh
+git clone https://github.com/Epic-R-R/Deer-Panel.git
+```
+
+2. Change to the project directory:
+```sh
+cd Deer-Panel/server/core
+```
+
+3. Install the dependencies:
+```sh
+pip install -r requirements.txt
+```
+
+### Running Deer-Panel
+
+```sh
+python manage.py runserver
+```
+
+### Tests
+```sh
+python manage.py test
+```
+
+---
+
+## API Documentation
+
+We have documented all the API endpoints, along with example requests and responses in Postman. Click the link below to explore the Deer Panel API documentation:
+
+[![View Documentation](https://img.shields.io/badge/API-Documentation-blue?style=for-the-badge)](https://documenter.getpostman.com/view/30889632/2s9YXe7itd)
+
+Feel free to test the endpoints directly within Postman or use the examples as a reference for how to interact with the API in your own applications.
+
+---
 
 ## Highlighted Features:
 
@@ -48,6 +95,7 @@
 
 Under the hood, Deer Panel leverages the capabilities of Django alongside the Django Rest Framework for backend operations, with a MySQL database anchoring data storage needs. The code architecture is meticulously crafted, housing a robust suite of tests to uphold software quality and reliability standards.
 
+---
 ## Repository Structure
 
 ```sh
@@ -171,8 +219,6 @@ python manage.py test
 ```
 
 ---
-
-
 ## Project Roadmap
 
 > - [X] `ℹ️  Task 1: User and Server Management Implementation`
@@ -224,15 +270,6 @@ Once your PR is reviewed and approved, it will be merged into the main branch.
 ## License
 
 This project is protected under the [MIT License](https://choosealicense.com/licenses/mit/). For more details, refer to the [LICENSE](https://github.com/Epic-R-R/Deer-Panel/blob/master/LICENSE) file.
-
----
-## API Documentation
-
-We have documented all the API endpoints, along with example requests and responses in Postman. Click the link below to explore the Deer Panel API documentation:
-
-[![View Documentation](https://img.shields.io/badge/API-Documentation-blue?style=for-the-badge)](https://documenter.getpostman.com/view/30889632/2s9YXe7itd)
-
-Feel free to test the endpoints directly within Postman or use the examples as a reference for how to interact with the API in your own applications.
 
 ---
 
