@@ -20,12 +20,11 @@ def execute_command(command: str) -> str:
     return stdout.decode("utf-8")
 
 
-def online() -> List[Dict[str, str]]:
+def online(ssh_port: str) -> List[Dict[str, str]]:
     duplicate = []
     data = []
 
-    port_ssh = "22"
-    command = f"sudo lsof -i :{port_ssh} -n | grep -v root | grep ESTABLISHED"
+    command = f"sudo lsof -i :{ssh_port} -n | grep -v root | grep ESTABLISHED"
     output = execute_command(command)
     online_user_list = re.split(r"\r\n|\n|\r", output)
 
